@@ -1,0 +1,308 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(
+    to right,
+    hsl(187, 85%, 43%),
+    hsl(199, 100%, 33%)
+  );
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --grayText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 246);
+  --cardBG: rgb(225, 225, 225);
+}
+
+.topcontainer {
+  // height: calc(100vh - 55px);
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+  .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(47, 106, 127);
+    top: 0px;
+    bottom: 0px;
+    z-index: 1;
+    mix-blend-mode: hard-light;
+  }
+  video {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    object-fit: cover;
+  }
+
+  .topContent {
+    width: 80%;
+    height: max-content;
+    padding: 5rem 1.5rem 7rem;
+    display: flex;
+    row-gap: 3rem;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    margin: auto;
+    color: var(--whiteColor);
+
+    z-index: 100;
+    .textDiv {
+      padding: 16px 0px;
+      span {
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+      h1 {
+        position: relative;
+        font-size: 1.8rem;
+      }
+    }
+
+    .holidaySearch {
+      position: relative;
+      // display: flex;
+      align-items: center;
+      padding: 1rem 1rem 2rem;
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 10px;
+      gap: 10px;
+
+      label {
+        color: var(--whiteColor);
+        display: block;
+        padding-bottom: 10px;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .destinationInput {
+        // flex: 1;
+        .icon {
+          color: var(--PrimaryColor);
+          margin-left: 10px;
+          font-size: 20px;
+        }
+      }
+      // .dateInput {
+      //   // flex: 1;
+      // }
+      .priceInput {
+        // flex: 1;
+        .label_total {
+          align-items: center;
+          justify-content: space-between;
+
+          h3 {
+            color: var(--whiteColor);
+            font-size: 15px;
+
+            padding: 0px 0px 10px;
+          }
+        }
+      }
+      .input {
+        border: 1px solid lightgray;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background: transparent;
+        height: 40px;
+        padding: 0px 1rem;
+        border-radius: 48px;
+        width: 90%;
+
+        input {
+          outline: none;
+          background-color: unset;
+          background: none;
+          font-size: 13px;
+          font-weight: 500;
+          width: 100%;
+          border: none;
+          &::placeholder {
+            font-size: 13px;
+            color: lightgray;
+          }
+        }
+        input[type="date"] {
+          background: unset;
+          outline: none;
+          border: none;
+          padding: 0px;
+          color: var(--grayText);
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator{
+          color-scheme: var(--gradientColor) !important;
+        }
+
+        
+
+
+
+        input[type="range"] {
+          cursor: pointer;
+        }
+      }
+
+      .searchOptions {
+        background: var(--gradientColor);
+        width: max-content;
+        position: absolute;
+        bottom: 0;
+        padding: 5px 16px;
+        border-radius: 48px;
+        column-gap: 0.8rem;
+        left: 50%;
+        transform: translate(-50%);
+        justify-content: center;
+        bottom: -0.8rem;
+        cursor: pointer;
+
+        &:hover {
+          background: var(--PrimaryColor);
+        }
+        .icon {
+          font-size: 18px;
+        }
+
+        span {
+          font-size: 13px;
+        }
+      }
+    }
+
+    .topContactList {
+      justify-content: space-between;
+
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--whiteColor);
+      }
+
+      .icon {
+        font-size: 20px;
+        cursor: pointer;
+        color: var(--whiteColor);
+        &:hover {
+          color: var(--PrimaryColor);
+        }
+      }
+    }
+  }
+
+  // for mobile
+  @media screen and (max-width: 768px) {
+    // .overlay {
+    // }
+    // video {
+    // }
+    .topContent {
+      width: 100%;
+      height: max-content;
+      padding: 5rem 1.5rem 3rem; //change
+      display: flex;
+      row-gap: 3rem;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      margin: auto;
+      color: var(--whiteColor);
+      z-index: 100;
+      .textDiv {
+        padding: 32px 0px;
+        span {
+          font-size: 13px;
+        }
+        // h1 {
+        // }
+      }
+      .holidaySearch {
+        display: inline;
+
+        // label {
+        // }
+
+        .destinationInput {
+          flex: none;
+        //   .icon {
+        //   }
+        }
+        .dateInput {
+          flex: none;
+
+        //   .date {
+        //   }
+        }
+        .priceInput {
+          flex: none;
+          .label_total {
+            h3 {
+              // color: var(--textColor);
+              font-size: 18px;
+              padding: 10px 0px;
+            }
+          }
+        }
+        // .input {
+        //   input {
+        //   }
+        //   input[type="date"] {
+        //   }
+        //   input[type="range"] {
+        //   }
+        // }
+
+        .searchOptions {
+        //   .icon {
+        //   }
+
+          span {
+            font-size: 13px;
+          }
+        }
+      }
+
+    //   .topContactList {
+    //     .item {
+    //     }
+
+    //     .icon {
+    //     }
+    //   }
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .holidaySearch{
+      grid-template-columns: auto auto !important;
+    }
+  }
+
+  @media screen and (min-width: 960px) {
+    .holidaySearch{
+      grid-template-columns: auto auto!important;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .holidaySearch{
+      grid-template-columns: auto auto auto!important;
+    }
+  }
+
+}

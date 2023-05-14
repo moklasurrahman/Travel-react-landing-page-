@@ -1,0 +1,323 @@
+:root{
+    --PrimaryColor : hsl(199, 100%, 33%);
+    --SecondaryColor : hsl(187, 85%, 43%);
+    --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+    --whiteColor : hsl(0, 0%, 100%);
+     --blackColor : hsl(201, 33%, 16%);
+     --textColor: hsl(240, 4%, 36%);
+     --whiteColorDeam : hsl(0, 0%, 93%);
+     --grayText : rgb(190, 190, 190);
+     --inputColor : rgb(239, 239, 239);
+     --bodyColor : rgb(240, 240, 246);
+     --cardBG: rgb(225, 225,225);
+     --cardHover: rgb(255, 255, 235);
+  
+  }
+
+
+
+.cardSection{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    
+
+    .allcontainer{
+    width: 80%;
+    
+    .sectiontitle{
+        text-transform: uppercase;
+        font-size: 15px;
+        margin: 5rem 0 0 10px;
+        h3{
+            position: relative;
+            // width: max-content;
+            color: var(--textColor);
+            margin: 1rem 0;
+            z-index: 2;
+            border-bottom: 2px solid var(--PrimaryColor);
+            width: max-content;
+
+            // &::after{
+            //     position: absolute;
+            //     background: var(--SecondaryColor);
+            //     content: '';
+            //     height: 5px;
+            //     width: 20%;
+            //     right: 0;
+            //     bottom: 3px;
+            //     z-index: -1;
+            // }
+
+        }
+    }
+
+    .cartContent{
+        width: 100%;
+        grid-template-columns: repeat(3,1fr);
+        height: auto;
+        .itemCont{
+            height: auto;
+        .item{
+          
+            // display: grid;
+            // row-gap: 10px;
+            border-radius: 10px;
+            align-items: center;
+            background: var(--cardBG);
+            box-shadow: 0 2px 4px rgb(140, 140, 141, 0.549);
+            overflow: hidden;
+            // cursor: pointer;
+            transition: 0.5s;
+            margin: 10px;
+
+            &:hover{
+                background: var(--cardHover);
+               box-shadow: 1px 4px 4px rgba(85, 85, 114, 0.549);
+               transition: 0.3s ease;
+            }
+            
+            .image{
+                height: 180px;
+                width: 100%;
+                overflow: hidden;
+                transition: 0.5s;
+               img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: 0.3s ease;
+               }
+               &:hover{
+                transform: scale(1.1);
+               }
+            }
+
+            .cardInfocont{
+                width: 100%;
+                margin-bottom: 20px;
+                .info{
+                    padding: 20px 20px 0px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                hr{
+                    border: none;
+                    height: 0.5px;
+                    background-color: var(--grayText);
+                            
+                }
+                .cardTitle{
+                    h3{
+                        font-size: 20px;
+                        color: var(--blackColor);
+                        text-transform: capitalize
+                        
+                        ;
+
+                    }
+                    .location{
+                        color: var(--textColor);
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        .icon{
+                            font-size: 20px;
+                        }
+                        span{
+                            font-size: 13px;
+                            font-style: italic;
+                        }
+                    }
+                    
+                }
+                .cardprice{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    h4{
+                        text-transform: uppercase;
+                        font-size: 15px;
+                        font-weight: 500;
+                        color: var(--textColor);
+
+                        
+
+                        .relax{
+                            background: var(--gradientColor);
+                            padding: 1px 10px;
+                            font-size: 9px;
+                            // width: 100px;
+                            // height: 50px;
+                            border-radius: 3rem;
+                            color: var(--whiteColor);
+                        }
+
+                    }
+                    h1{
+                        color: var(--blackColor);
+                        font-size: 22px;
+                    }
+                }
+                .cardDesc{
+                    p{
+                        // text-align: justify;
+                        font-size: 14px;
+                        color: var(--textColor);
+
+                    }
+                }
+                .btn{
+                    align-items: center;
+                    font-size: 13px;
+                    width: max-content;
+                    padding: 0.5rem 1.2rem;
+                    gap: 5px;
+                    color: var(--whiteColor);
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    &:hover{
+                        background: var(--PrimaryColor);
+                    }
+
+                    .icon{
+                        font-size: 15px;
+                    }
+
+
+                }
+
+            }
+               
+            }
+        }
+    }
+    }
+
+
+
+
+    @media screen and (max-width: 768px) {
+
+        .allcontainer{
+            width: 10%;
+        }
+
+        .itemCont{
+            width: 100% !important;
+            
+        }
+
+        .sectiontitle{
+            text-transform: uppercase;
+            font-size: 12px;
+            margin-top: 4rem;
+            // margin-bottom: 15px;
+            h3{
+                position: relative;
+                // width: max-content;
+                color: var(--textColor);
+                margin: 1rem 0;
+                z-index: 2;
+                border-bottom: 2px solid var(--PrimaryColor);
+                width: max-content;
+    
+            }
+        }
+        .cartContent{
+            justify-content: center;
+            grid-template-columns: unset; ////
+            width: 100%;
+
+            .item{
+                height: 100%;
+    
+                .cardInfocont{
+                    width: 100%;
+                    margin-bottom: 20px;
+                    .info{
+                    .cardTitle{
+                        h3{
+                            font-size: 25px;
+    
+                        }
+    
+                        
+                    }
+                    .cardprice{
+                        h4{
+                            font-size: 18px;
+                            .relax{
+                                font-size: 12px;
+                                // width: 100px;
+                                // height: 50px;
+                            }
+    
+                        }
+                        h1{
+                            font-size: 25px;
+                        }
+                    }
+                    .cardDesc{
+                        p{
+                            // text-align: justify;
+                            font-size: 15px;
+    
+                        }
+                    }
+                    .btn{
+                        align-items: center;
+                        font-size: 15px;
+                        width: max-content;
+                        gap: 5px;
+                        color: var(--whiteColor);
+                        text-transform: uppercase;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        &:hover{
+                            background: var(--PrimaryColor);
+                        }
+    
+                        .icon{
+                            font-size: 20px;
+                        }
+    
+    
+                    }
+    
+                }
+                   
+                }
+            }
+        }
+    
+
+    }
+
+
+
+    @media screen and (min-width: 769px) {
+        .cartContent{
+            grid-template-columns: auto auto !important;
+        }
+
+    }
+
+    @media screen and (min-width: 1200px) {
+        .cartContent{
+            grid-template-columns: auto auto auto!important;
+        }
+
+    }
+
+    
+
+}
+
+}
